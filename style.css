@@ -98,3 +98,47 @@ h1 {
     margin-right: 5px;
 }
 
+
+/* Add this CSS at the end of your existing style.css file */
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .resume {
+      padding: 10px;
+    }
+  
+    .resume h1 {
+      font-size: 24px;
+    }
+  
+    .resume-section {
+      padding: 10px 0;
+    }
+  
+    .head {
+      margin-bottom: 20px;
+    }
+  
+    .contact-info,
+    .Coursework-lists {
+      flex-direction: column;
+    }
+  
+    .relevant-coursework li,
+    .Projects li,
+    .Technical-skills li,
+    .extracurricular li {
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .resume h1 {
+      font-size: 20px;
+    }
+  
+    .project-date {
+      font-size: 12px;
+    }
+  }
+  
