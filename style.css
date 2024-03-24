@@ -97,9 +97,14 @@ h1 {
     font-weight: bold;
     margin-right: 5px;
 }
+.profile-picture {
+  width: 150px; /* Adjust as needed */
+  height: 150px; /* Adjust as needed */
+  border-radius: 50%; /* Makes the image round */
+  margin-bottom: 20px; /* Provides some space below the image */
+}
 
 
-/* Add this CSS at the end of your existing style.css file */
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
