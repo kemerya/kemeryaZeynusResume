@@ -1,1 +1,0 @@
-# KemeryaZeynusResume.github.io-
