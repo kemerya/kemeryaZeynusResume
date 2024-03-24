@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin:auto;
+    padding: 0;
+}
+
+.resume {
+    /* max-width:fit-content; */
+    margin:  auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.resume h1 {
+    margin-top: 0;
+}
+
+.resume h2 {
+    margin: auto;
+}
+
+.contact-info,
+.Coursework-lists {
+    list-style: none;
+    display: inline-flex;
+    padding: 0;
+}
+
+.contact-info li,
+.Coursework-lists li {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.education,
+.relevant-coursework,
+.Projects,
+.Technical-skills,
+.extracurricular {
+    margin-top: 20px;
+}
+
+.education h2,
+.relevant-coursework h2,
+.Projects h2,
+.Technical-skills h2,
+.extracurricular h2 {
+    margin-bottom: 10px;
+}
+
+.relevant-coursework ul
+
+{
+    list-style: none;
+    padding: 0;
+}
+
+.relevant-coursework li,
+.Projects li,
+.Technical-skills li,
+.extracurricular li {
+    margin-bottom: 5px;
+}
+
+.project-date {
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+}
+
+.resume-section {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.head {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+.extracurricular h6{
+    font-weight: bolder;
+}
+.technical-skill-lists {
+    list-style: none;
+    padding: 0;
+}
+
+.technical-skill-lists li {
+    margin-bottom: 10px;
+}
+
+.technical-skill-lists li strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
