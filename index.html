@@ -3,133 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kemerya Zeynu</title>
+    <title>Kemerya Zeynu | Portfolio</title>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: #121212;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.9);
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+            height: 100vh;
+            background: linear-gradient(to right, #1e1e1e, #2c2c2c);
+            padding: 50px 20px;
+        }
+
+        .hero-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 50%;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+        }
+
+        .hero-content .btn-custom {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .hero-content .btn-custom:hover {
+            background: #45a049;
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #4CAF50;
+        }
+
+        .profile-picture {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-picture img {
+            width: 270px;
+            height: 350px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            object-fit: cover;
+        }
+
+        /* New Sections */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: #1e1e1e;
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+        .experience-slider { position: relative; overflow: hidden; height: 250px; }
+        .experience-card {
+            position: absolute; width: 100%; transition: transform 1s ease-in-out, opacity 1s ease-in-out; opacity: 0;
+        }
+        .experience-card.active { transform: translateX(0); opacity: 1; }
+        .experience-card.next { transform: translateX(100%); opacity: 0; }
+        .experience-card.prev { transform: translateX(-100%); opacity: 0; }
+
+        /* Footer */
+        footer {
+            background-color: #1e1e1e;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="resume">
-            <div class="head">
-                <img src="img/profile-picture0.jpg" alt="Profile Picture" class="profile-picture">
-                <h1>Kemerya Zeynu</h1>
-                <p><a href="https://www.google.com/maps/search/?api=1&query=Lebu%2C+Addis+Ababa%2C+Ethiopia" target="_blank">Lebu, Addis Ababa, Ethiopia</a></p>
-                <ul class="contact-info">
-                    <li>📞<a href="tel:0965370001" target="_blank">09-65-37-00-01</a></li>
-                    <li>📧<a href="mailto:kemerzeynu00@gmail.com" target="_blank">kemerzeynu00@gmail.com</a></li>
-                    <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/kemerya-zeynu-b918a924a" target="_blank">LinkedIn</i></a></li>
-                    <li><i class="fab fa-github"></i><a href="https://github.com/kemerya" target="_blank">Github</i></a></li>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Kemerya Zeynu</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experiences">Experience & Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Memberships">Memberships</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
                 </ul>
             </div>
-            <hr>
-            <div class="education resume-section">
-                <h2>Education</h2>
-                <p><a href="https://www.google.com/maps/search/?api=1&query=St%27+Mary%27s+University%2C+Ethiopia" target="_blank">St’ Mary’s University, Ethiopia</a></p>
-
-                <p>Bachelor Degree in Computer Science</p>
-                <p>May 2021 - present</p>
-            </div>
-            <hr>
-            <div class="relevant-coursework resume-section">
-                <h2>Relevant Coursework</h2>
-                <ul class="Coursework-lists">
-                    <li>📌Object-Oriented Programming <br> 📌Software Methodology </li>
-                    <li>📌Web Development <br> 📌Cybersecurity Fundamentals</li> 
-                    <li>📌Database Systems</li>
-                </ul>                
-            </div>
-            <hr>
-            <div class="Projects resume-section">
-                <h2>Projects</h2>
-                <div class="row">
-                    <div class="col">   
-                        <h5><strong>Personal Financial Management System</strong></h5>
-                    </div>
-                    <div class="col-auto">
-                        <span class="project-date">March 2024</span>
-                    </div>    
-                </div>
-               
-                    <p><b>Html, CSS, Bootstrap, font-awesome, ASP.Net Framework </b></p>
-                    <ul class="project-list1">  
-                       <li>Create a robust and intuitive web-based platform</li> 
-                        <li>Facilitate personal financial management for users</li>
-                        <li>Offer tools for budgeting, expense tracking, and goal setting</li>
-                       <li>Provide insights and analytics to aid in financial decision-making</li> 
-                    </ul>      
-                    <div class="row">
-                        <div class="col">   
-                            <h5><strong>Internsphere: internship Management System UI</strong></h5>
-                        </div>
-                        <div class="col-auto">
-                            <span class="project-date">March 2024</span>
-                        </div>    
-                    </div>
-                    <p><b>Html, CSS, Bootstrap, font-awesome</b></p>
-                    <ul class="project-list2">
-                       <li> Design and develop a user-friendly web-based platform</li>
-                       <li> Streamline the management of internships</li>
-                       <li>Provide administrators, employers, and interns with efficient tools</li> 
-                       <li>Enable listing, applying to, and managing internship opportunities</li> 
-                   </ul>   
-            </div>
-            <hr>
-            <div class="Technical-skills resume-section">
-                <h2>Technical Skills</h2>
-                <ul class="technical-skill-lists">
-    <li><strong>Languages:</strong> Python, Java, C#, HTML, CSS, JavaScript, SQL</li>
-    <li><strong>Developer Tools:</strong> Visual Studio Code, Android Studio</li>
-    <li><strong>Technologies/Frameworks:</strong> GitHub, WordPress, ASP.NET, Slack</li>
-</ul>
-
-            </div>
-
-            <div class="extracurricular resume-section">
-                <h2>Leadership/ Extracurricular</h2> 
-                <div class="row">
-                    <div class="col">   
-                        <h6>Computer Science club lead member</h6>
-                    </div>
-                    <div class="col-auto">
-                        <span class="project-date">March 2023 - present</span><br>
-                        <span class="project-date">st' Marys University</span>
-                    </div>    
-                </div>
-                <ul class="extracurricular-lists">
-                    <li>Collaborate with club members to plan and execute social media campaigns effectively</li>
-                    <li>Solicit input and feedback from team members to ensure diverse perspectives and ideas are considered</li>
-                    <li>Delegate tasks and responsibilities to team members based on their strengths and interests</li>
-                    <li>Foster a collaborative environment where members feel empowered to contribute their ideas and insights</li>
-                    <li>Work closely with other club leaders to align social media efforts with overall club objectives and initiatives</li>
-                </ul> 
-                <div class="row">
-                    <div class="col">   
-                        <h6>Class room Representative</h6>
-                    </div>
-                    <div class="col-auto">
-                        <span class="project-date">May 2021 - March 2024</span><br>
-                        <span class="project-date">st' Marys University</span>
-                    </div>    
-                </div>
-                <ul class="extracurricular-lists">
-                   <li>Acted as a link between students and faculty to address concerns and facilitate communication</li> 
-                   <li>Advocated for the needs and interests of classmates within the academic setting</li>  
-                   <li>Organized and led meetings to discuss issues relevant to the class and propose solutions</li> 
-                   <li>Collaborated with fellow representatives to coordinate class-wide initiatives and events</li> 
-                   <li> Played a key role in promoting a positive and inclusive classroom environment</li>
-                </ul>
-                
-            </div>
-            
         </div>
-    </div>
-    <!-- Bootstrap JS and jQuery (required for Bootstrap) -->
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="display-4" id="about ">About Me</h1>
+                <p class="lead">Computer Science Graduate | Data Analyst at iCog</p>
+                <p>I am Kemerya Zeynu, a skilled data analyst and web developer with strong problem-solving skills.</p>
+                <a href="#contact" class="btn btn-custom">Let's Get Started</a>
+            </div>
+            <div class="profile-picture">
+                <img src="img/profile.jpg" alt="Profile Picture">
+            </div>
+        </div>
+    </header>
+
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">Data Analysis</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">Project Management</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body"> Web Development</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">  Event Coordination</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">   Public Speaking</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body"> Research</div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">Machine Learning</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="experiences" class="section">
+        <h2 data-aos="fade-up">Experience</h2>
+        <div class="container experience-slider">
+            <div class="experience-card active">
+                <div class="card">
+                    <div class="card-body">
+                          <h4><b>Research Intern – iCog
+                                September 2024 – Present</b></h4><p>
+                                Conducted data cleaning, filtering, and organizing for research and business
+                                development projects.
+                                Analyzed datasets to identify trends and generate insights for strategic decision
+                               making.
+                                Created data visualizations and reports to support business growth initiatives.
+                                Assisted in survey design and data collection for research projects.
+                                Collaborated with cross-functional teams to enhance data-driven decision-making.</p>
+                            </div>
+                    </div>
+            </div>
+            <div class="experience-card next">
+                <div class="card">
+                    <div class="card-body">
+           <h4><b>Team Leader, Financial Management System Project
+                            Duration: January 2023 - April 2023</b></h4><p>
+                            Led a team of 4 in developing a financial management system using the ASP.NET
+                            framework.
+                            Coordinated team meetings, delegated tasks, and ensured project milestones were
+                            met.
+                            Designed and implemented core modules, including transaction tracking and
+                            financial reporting.
+                            Presented the project to faculty and received positive feedback for functionality and
+                            user interface</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-card next">
+                    <div class="card">
+                        <div class="card-body">
+               <h4><b>Class Representative
+                            Duration: 2021 - 2024</b></h4><p>
+                            Acted as a liaison between students, lecturers, and the department.
+                            Organized and facilitated meetings to address academic concerns and suggestions.
+                            Improved communication channels and resolved conflicts, fostering a collaborative
+                            environment.
+                            Assisted in planning and executing departmental events and activities</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id=" Memberships" class="section">
+        <h2> Memberships</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body"><h4><b>Core Team Member, Google Developer Group
+                            Duration: 2023 - 2024</b></h4><p>
+                            Engaged in community events and workshops to stay updated with the latest Google
+                            technologies.</p></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body"><h4><b> Co-lead, Computer Science Club
+                            Duration: 2022 - 2024</b></h4><p>
+                            Played a key role in organizing club events, seminars, and coding competitions.
+                            Promoted the club's activities and increased membership through strategic outreach.
+                            Provided mentorship and guidance to junior members, fostering a supportive
+                            learning environment</p></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <!-- <div class="card-body">Machine Learning</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            Phone: <a href="tel:+251965370001">251-965-370-001</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                           Email:  <a href="mailto:kemerzeynu00@gmail.com">kemerzeynu00@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+
+                              LinkedIn: <a href="https://www.linkedin.com/in/kemerya-zeynu-b918a924a">LinkedIn</a>
+
+                          </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white">
+        <p>© 2025 Kemerya Zeynu | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentIndex = 0;
+            const cards = document.querySelectorAll(".experience-card");
+            const totalCards = cards.length;
+
+            function showCard(index) {
+                cards.forEach((card, i) => {
+                    card.classList.remove("active", "next", "prev");
+                    if (i === index) {
+                        card.classList.add("active");
+                    } else if (i === (index + 1) % totalCards) {
+                        card.classList.add("next");
+                    } else if (i === (index - 1 + totalCards) % totalCards) {
+                        card.classList.add("prev");
+                    }
+                });
+            }
+
+            function nextCard() {
+                currentIndex = (currentIndex + 1) % totalCards;
+                showCard(currentIndex);
+            }
+
+            function prevCard() {
+                currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+                showCard(currentIndex);
+            }
+
+            // Initial display
+            showCard(currentIndex);
+
+            // Auto slide every 5 seconds
+            setInterval(nextCard, 5000);
+        });
+        </script>
+
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Font Awesome JS (required for icons) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

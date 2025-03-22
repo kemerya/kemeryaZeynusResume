@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; }
+        .section { padding: 50px 20px; text-align: center; }
+        .container { max-width: 800px; margin: auto; }
+
+        /* Experience Section */
+        .experience-slider { position: relative; overflow: hidden; height: 250px; }
+        .experience-card {
+            position: absolute; width: 100%; transition: transform 1s ease-in-out, opacity 1s ease-in-out; opacity: 0;
+        }
+        .experience-card.active { transform: translateX(0); opacity: 1; }
+        .experience-card.next { transform: translateX(100%); opacity: 0; }
+        .experience-card.prev { transform: translateX(-100%); opacity: 0; }
+    </style>
+</head>
+<body>
+
+    <section id="experiences" class="section">
+        <h2 data-aos="fade-up">Experience</h2>
+        <div class="container experience-slider">
+            <div class="experience-card active">
+                <div class="card">
+                    <div class="card-body">
+                        <h4><b>Research Intern – iCog
+                            September 2024 – Present</b></h4><p>
+                            Conducted data cleaning, filtering, and organizing for research and business
+                            development projects.
+                            Analyzed datasets to identify trends and generate insights for strategic decision
+                           making.
+                            Created data visualizations and reports to support business growth initiatives.
+                            Assisted in survey design and data collection for research projects.
+                            Collaborated with cross-functional teams to enhance data-driven decision-making.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="experience-card next">
+                <div class="card">
+                    <div class="card-body">
+                        <h4><b>Team Leader, Financial Management System (Jan 2023 - Apr 2023)</b></h4>
+                        <p>Led a team of 4 in developing a financial management system using ASP.NET.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="experience-card next">
+                <div class="card">
+                    <div class="card-body">
+                        <h4><b>Class Representative (2021 - 2024)</b></h4>
+                        <p>Acted as a liaison between students, lecturers, and the department.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            let currentIndex = 0;
+            const cards = $(".experience-card");
+
+            function showNextCard() {
+                let nextIndex = (currentIndex + 1) % cards.length;
+                $(cards[currentIndex]).removeClass("active").addClass("prev");
+                $(cards[nextIndex]).removeClass("next").addClass("active");
+
+                setTimeout(() => {
+                    $(cards[currentIndex]).removeClass("prev").addClass("next");
+                    currentIndex = nextIndex;
+                }, 1000);
+            }
+
+            setInterval(showNextCard, 3000); // Change card every 3 seconds
+
+            // Initialize AOS animations
+            AOS.init({ duration: 1000, once: true });
+        });
+    </script>
+
+</body>
+</html>
